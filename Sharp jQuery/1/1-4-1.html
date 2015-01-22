@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery库在其他库之后导入</title>
+    </head>
+    <body>
+        <p id="pp">test---prototype</p>
+        <p>test--jQuery</p>
+        <!-- 引入 prototype -->
+        <script type="text/javascript" src="../scripts/prototype-1.6.0.3.js"></script>
+        <!-- 引入 jQuery -->
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            jQuery.noConflict(); // 将变量$的控制权移交给prototype.js
+            jQuery(function() { // 使用jQuery
+                jQuery("p").click(function() {
+                    alert(jQuery(this).text());
+                });
+            });
+
+            $("pp").style.display = "none"; // 使用prototype
+        </script>
+    </body>
+</html>

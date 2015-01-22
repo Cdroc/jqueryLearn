@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery库在其他库之前导入</title>
+    </head>
+    <body>
+        <p id="pp">test---prototype</p>
+        <p>test--jQuery</p>
+        <!-- 引入 jQuery -->
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <!-- 引入 prototype -->
+        <script type="text/javascript" src="../scripts/prototype-1.6.0.3.js"></script>
+        <script type="text/javascript">
+            jQuery(function() { // 直接使用jQuery，无需jQuery.noConflict();
+                jQuery("p").click(function() {
+                    alert(jQuery(this).text());
+                });
+            });
+
+            $("pp").style.display = "none"; // 使用prototype
+        </script>
+    </body>
+</html>
