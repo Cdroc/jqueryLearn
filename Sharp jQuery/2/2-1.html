@@ -27,10 +27,56 @@
         </style>
         <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
         <script type="text/javascript">
-            
+            $(document).ready(function() {
+                // 基本选择器
+                // $("#one").css("background", "#bfa");
+                // $(".mini").css("background", "#bfa");
+                // $("div").css("background", "#bfa");
+                // $("*").css("background", "#bfa");
+                // $("span, #two").css("background", "#bfa");
+                // 层次选择器
+                // $("body div").css("background", "#bfa");
+                // $("body>div").css("background", "#bfa");
+                // $(".one + div").css("background", "#bfa");
+                // $("#two~div").css("background", "#bfa");
+                // 基本过滤选择器
+                // $("div:first").css("background", "#bfa");
+                // $("div:last").css("background", "#bfa");
+                // $("div:not(.mini)").css("background", "#bfa");
+                // $("div:even").css("background", "#bfa");
+                // $("div:odd").css("background", "#bfa");
+                // $("div:eq(3)").css("background", "#bfa");
+                // $("div:gt(3)").css("background", "#bfa");
+                // $("div:lt(1)").css("background", "#bfa");
+                // $(":header").css("background", "#bfa");
+                // $("#move").fadeTo("fast", 1);
+                // $(":animated").css("background", "#bfa");
+                // 内容过滤选择器
+                // $("div:contains(di)").css("background", "#bfa");
+                // $("div:empty").css("background", "#bfa");
+                // $("div:has(.mini)").css("background", "#bfa");
+                // $("div:parent").css("background", "#bfa");
+                // 可见性过滤选择器
+                // $("div:hidden").show(3000);
+                // $("div:visible").css("background", "#bfa");
+                // 属性过滤选择器
+                // $("div[id]").css("background", "#bfa");
+                // $("div[title=test]").css("background", "#bfa");
+                // $("div[title!=test]").css("background", "#bfa");
+                // $("div[class^=mi]").css("background", "#bfa");
+                // $("div[title*=est]").css("background", "#bfa");
+                // $("div[id][title$=test]").css("background", "#bfa");
+                // 子元素过滤选择器
+                // $("div.one :nth-child(2)").css("background", "#bfa");
+                // $("div.one :first-child").css("background", "#bfa");
+                // $("div.one :last-child").css("background", "#bfa");
+                // $("div.one :only-child").css("background", "#bfa");
+                // 表单对象属性过滤选择器
+            });
         </script>
     </head>
     <body>
+        <h1>h1</h1>
         <div class="one" id="one">
             id为one, class为one的div
             <div class="mini">class为mini</div>
@@ -46,6 +92,7 @@
             <div class="mini">class为mini</div>
             <div class="mini"></div>
         </div>
+        <h3>h3</h3>
         <div class="one">
             <div class="mini">class为mini</div>
             <div class="mini">class为mini</div>
@@ -58,5 +105,6 @@
             包含input的type为"hidden"的div<input type="hidden" size="8" />
         </div>
         <span id="move">正在执行动画的span元素</span>
+        <h2>h2</h2>
     </body>
 </html>
