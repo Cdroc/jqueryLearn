@@ -41,3 +41,10 @@ jQuery选择器 -- 基本选择器 -- #id
                            -- $("div[@title='test']") -- 错误写法
                            -- $("div[title='test']")  -- 正确写法，去掉@
                            -- 注意选择器中的空格
+
+show() 
+css(name, value)
+text(string)
+filter(expr)     -- 筛选出于指定表达式匹配的元素集合，其中expr可以是多个选择器的组合
+addClass(class)
+toggle(func1, func2)     -- 用来交替一组动作
