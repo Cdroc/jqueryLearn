@@ -137,8 +137,42 @@
 				// 		$(this).val("请输入邮箱密码"); // $(this).val(this.defaultValue);
 				// 	}
 				// });
-
-
+				// 11.1 children()方法 -- 只考虑子元素而不考虑任何后代元素
+				// var $body = $("body").children();
+				// var $p = $("p").children();
+				// var $ul = $("ul").children();
+				// alert($body.length);
+				// alert($p.length);
+				// alert($ul.length);
+				// for (var i = $ul.length - 1; i >= 0; i--) {
+				// 	alert($ul[i].innerHTML);
+				// };
+				// 11.2 next()方法 -- 匹配元素后面紧邻的同辈元素
+				// var $p1 = $("p").next();  // 获取后面的ul元素
+				// alert($p1.html());
+				// 11.3 prev()方法 -- 匹配元素前面紧邻的同辈元素
+				// var $ul = $("ul").prev(); // 获取前面的p元素
+				// 11.4 siblings()方法 -- 匹配元素前后所有的同辈元素
+				// var $p2 = $("p").siblings(); // 获取p的所有同辈元素
+				// 11.5 closest()方法 -- 从当前或向上查找父元素最近的匹配元素
+				// $(document).bind("click", function(e) {
+				// 	$(e.target).closest("li").css("color", "red");
+				// })
+				// 12.1 offset()方法 -- 元素在当前视窗的相对偏移
+				// var offset = $("p").offset();
+				// var left = offset.left;
+				// var top = offset.top;
+				// alert(left + " " + top);
+				// 12.2 position()方法 -- 元素相对于position父框的相对偏移
+				// var position = $("p").position();
+				// var left = position.left;
+				// var top = position.top;
+				// alert(left + " " + top);
+				// 12.3 scrollTop()、scrollLeft()方法
+				// var $p = $("p");
+				// var scrollTop = $p.scrollTop();
+				// var scrollLeft = $p.scrollLeft();
+				// alert(scrollLeft + " " + scrollTop);
 			});
 		</script>
 	</head>
@@ -150,7 +184,7 @@
 			<li title="橘子">橘子</li>
 			<li title="菠萝">菠萝</li>
 		</ul>
-
+		
 		<input type="text" id="address" value="请输入邮箱地址" /> <br />
 		<input type="text" id="password" value="请输入邮箱密码" /> <br />
 		<input type="button" value="登录" />
