@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <style type="text/css">
+            .content {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                // $("#panel h5.head").bind("mouseover", function() {
+                //     $(this).next("div.content").show();
+                // }).bind("mouseout", function() {
+                //     $(this).next("div.content").hide();
+                // });
+                // 简写
+                $("#panel h5.head").mouseover(function() {
+                    $(this).next("div.content").show();
+                }).mouseout(function() {
+                    $(this).next("div.content").hide();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="panel">
+            <h5 class="head">什么是jQuery?</h5>
+            <div class="content">
+                jQuery是继Prototype之后又一个优秀的JavaScript库，它是一个由John Resig创建于2006年1月的开源项目。
+            </div>
+            <div class="content">
+                jQuery Prototype JavaScript 
+                John Resig
+            </div>
+        </div>
+    </body>
+</html>

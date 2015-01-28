@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <style type="text/css">
+            #panel {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                border: 1px solid #0050d0;
+                background: #96e555;
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("#panel").click(function() {
+                    // 1
+                    // $(this).animate({left: "500px"}, 3000); // 最后left值为500px
+                    // 2
+                    // $(this).animate({left: "+=500px"}, 3000); // +=累加，最后left值为原left值+500px
+                    // 3
+                    // $(this).animate({left: "500px", height: "200px"}, 3000);
+                    // 4
+                    // $(this).animate({left: "500px"}, 3000)
+                    //        .animate({height: "200px"}, 3000);
+                    // 5
+                    // $(this).css("opacity", "0.5")
+                    //        .animate({left: "400px", height: "200px", opacity: "1"}, 3000)
+                    //        .animate({top: "200px", width: "200px"}, 3000)
+                    //        .fadeOut("slow");
+                    // 6
+                    // $(this).animate({left: "400px", height: "200px", opacity: "1"}, 3000)
+                    //        .animate({top: "200px", width: "200px"}, 3000, function() {
+                    //             $(this).css("border", "5px solid blue");
+                    //        });
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div id="panel"></div>
+    </body>
+</html>
