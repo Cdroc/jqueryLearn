@@ -49,6 +49,13 @@ stop([clearQueue][, gotoEnd]) -- 停止动画 -- 参数1，可选，为Boolean�
                                           -- 是否要清空未执行完的动画队列
                                           -- 参数2，可选，为Boolean值
                                           -- 是否直接将正在执行的动画跳转到末状态
+
+toggle(speed, [callback])          -- 切换元素的可见状态（改变高度、宽度、不透明度）
+slideToggle(speed, [callback])     -- 通过高度变化来切换元素的可见性
+fadeTo(speed, opacity, [callback]) -- 把元素的不透明度以渐进方式调整到指定的值
+
+特定样式的属性值 -- "show"、"hide"、"toggle"，也可以是自定义数字（值）
+
 ---------------------------------------------------------------------------------
 
 4-3.html -- bug
@@ -56,3 +63,4 @@ stop([clearQueue][, gotoEnd]) -- 停止动画 -- 参数1，可选，为Boolean�
 
 $("input").trigger("focus");       -- 触发focus事件，并使<input>元素获得焦点
 $("input").triggerHandle("focus"); -- 触发focus事件，但<input>元素未获得焦点
+if(! $(element).is(":animated"))   -- 判断元素是否处于动画状态

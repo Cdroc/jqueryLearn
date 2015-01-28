@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <style type="text/css">
+            .cartoon, .heghlight_tip, li {
+                float: left;
+                margin-left: 10px;
+            }
+            li {
+                list-style: none;
+            }
+            .v_content {
+                clear: both;
+            }
+            .v_content_list ul {
+                width: 480px;
+                height: 140px;
+                overflow: hidden;
+            }
+        </style>
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var page = 1;
+                var i = 4;
+                // 下一页
+                $("span.next").click(function() {
+                    var $parent = $(this).parents("div.v_show");
+                    var $v_show = $parent.find("div.v_content_list");
+                    var $v_content = $parent.find("div.v_content");
+
+                    var v_width = $v_content.width(); // 带单位
+                    var len = $v_show.find("li").length;
+                    var page_count = Math.ceil(len / i);
+
+                    if (!$v_show.is(":animated")){
+                        if (page == page_count) {
+                            $v_show.animate({left: "0px"}, "normal");
+                            page = 1;
+                        } else {
+                            $v_show.animate({left: "-="+v_width}, "normal");
+                            page++;
+                        }
+                    }
+                    $parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
+                })
+                // 上一页
+                // if (!$v_show.is(":animated")){
+                //     if (page == 1) {
+                //         $v_show.animate({left: "-="+v_width*(page_count-1)}, "slow");
+                //         page = page_count;
+                //     } else {
+                //         $v_show.animate({left: "+="+v_width}, "slow");
+                //         page--;
+                //     }
+                // }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="v_show">
+            <div class="v_caption">
+                <h2 class="cartoon" title="卡通动漫">卡通动漫</h2>
+                <div class="heghlight_tip">
+                    <span>1</span><span>2</span><span>3</span><span>4</span>
+                </div>
+                <div class="change_btn">
+                    <span class="prev">上一页</span>
+                    <span class="next">下一页</span>
+                    <em><a href="#">更多>></a></em>
+                </div>
+                <div class="v_content">
+                    <div class="v_content_list">
+                        <ul>
+                            <li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+                            <li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+                            <li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+                            <li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+                            <li><a href="#"><img src="img/02.jpg" alt="多啦A梦" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>15,276</em></span></li>
+                            <li><a href="#"><img src="img/02.jpg" alt="多啦A梦" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>15,276</em></span></li>
+                            <li><a href="#"><img src="img/02.jpg" alt="多啦A梦" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>15,276</em></span></li>
+                            <li><a href="#"><img src="img/02.jpg" alt="多啦A梦" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>15,276</em></span></li>
+                            <li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>38,276</em></span></li>
+                            <li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>38,276</em></span></li>
+                            <li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>38,276</em></span></li>
+                            <li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>38,276</em></span></li>
+                            <li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>57,865</em></span></li>
+                            <li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>57,865</em></span></li>
+                            <li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>57,865</em></span></li>
+                            <li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>57,865</em></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
