@@ -16,7 +16,7 @@
         <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
         <script type="text/javascript">
             $(function() {
-                $("#panel").click(function() {
+                // $("#panel").click(function() {
                     // 1
                     // $(this).animate({left: "500px"}, 3000); // 最后left值为500px
                     // 2
@@ -36,6 +36,48 @@
                     //        .animate({top: "200px", width: "200px"}, 3000, function() {
                     //             $(this).css("border", "5px solid blue");
                     //        });
+                // })
+                // 7
+                // $("#panel").hover(function() {
+                //     $(this).stop()
+                //            .animate({height: "150", width: "300"}, 200);
+                // }, function() {
+                //     $(this).stop()
+                //            .animate({height: "22", width: "60"}, 300);
+                // })
+                // 8
+                // $("#panel").hover(function() {
+                //     $(this).stop()
+                //            .animate({height: "150"}, 2000) // 如果在此时触发了光标移出的时间
+                //                                            // 将执行下面的动画
+                //                                            // 而非光标移出事件中的动画
+                //                                            // stop()只会停止当前正在运行的动画
+                //            .animate({width: "300"}, 3000);
+                // }, function() {
+                //     $(this).stop()
+                //            .animate({height: "22"}, 2000)
+                //            .animate({width: "60"}, 3000);
+                // })
+                // 9
+                // $("#panel").hover(function() {
+                //     $(this).stop(true)
+                //            .animate({height: "150"}, 2000) // 如果在此时触发了光标移出事件
+                //                                            // 直接跳过后面的动画队列
+                //            .animate({width: "300"}, 3000);
+                // }, function() {
+                //     $(this).stop(true)
+                //            .animate({height: "22"}, 2000)
+                //            .animate({width: "60"}, 3000);
+                // })
+                // 10
+                $("#panel").hover(function() {
+                    $(this).stop(true, true)
+                           .animate({height: "150"}, 2000)
+                           .animate({width: "300"}, 3000);
+                }, function() {
+                    $(this).stop(true, true)
+                           .animate({height: "22"}, 2000)
+                           .animate({width: "60"}, 3000);
                 })
             });
         </script>
