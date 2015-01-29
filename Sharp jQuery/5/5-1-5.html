@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("form :input.required").each(function() {
+                    var $required = $("<strong class='high'> *</strong>"); // 创建元素
+                    $(this).parent().append($required);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <form method="post" action="">
+            <div class="int">
+                <label for="username">用户名：</label>
+                <!-- 在表单内class属性为"required"的文本框是必须填写的 -->
+                <input type="text" id="username" class="required" />
+            </div>
+            <div class="int">
+                <label for="email">邮箱：</label>
+                <input type="text" id="email" class="required" />
+            </div>
+            <div class="int">
+                <label for="personinfo">个人资料：</label>
+                <input type="text" id="personinfo" />
+            </div>
+            <div class="int">
+                <input type="submit" value="提交" id="send"/>
+                <input type="reset" id="res"/>
+            </div>
+        </form>
+    </body>
+</html>

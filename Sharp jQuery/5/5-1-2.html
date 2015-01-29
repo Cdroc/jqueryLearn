@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                // 1
+                // $(".bigger").click(function() {
+                //     var height = $("#comment").height(); // 没带单位
+                //     if (height < 500) {
+                //         $("#comment").height(height + 50);
+                //     }
+                // })
+                // $(".smaller").click(function() {
+                //     var height = $("#comment").height(); // 没带单位
+                //     if (height > 50) {
+                //         $("#comment").height(height - 50);
+                //     }
+                // })
+                // 2
+                // $(".bigger").click(function() {
+                //     var height = $("#comment").height(); // 没带单位
+                //     if (height < 500 && !$("#comment").is(":animated")) {
+                //         //$("#comment").stop();
+                //         $("#comment").animate({height: "+=50"}, 3000);
+                //     }
+                // })
+                // $(".smaller").click(function() {
+                //     var height = $("#comment").height(); // 没带单位
+                //     if (height > 50 && !$("#comment").is(":animated")) {
+                //         //$("#comment").stop();
+                //         $("#comment").animate({height: "-=50"}, 3000);
+                //     }
+                // })
+                // 3
+                $(".up").click(function() {
+                    if (!$("#comment").is(":animated")) {
+                        $("#comment").animate({scrollTop: "-=50"}, 400);
+                    }
+                })
+                $(".down").click(function() {
+                    if (!$("#comment").is(":animated")) {
+                        $("#comment").animate({scrollTop: "+=50"}, 400);
+                    }
+                })
+            });
+
+        </script>
+    </head>
+    <body>
+        <form>
+            <div class="msg">
+                <div class="msg_caption">
+                    <span class="bigger">放大</span>
+                    <span class="smaller">缩小</span>
+                </div>
+                <div class="msg_caption">
+                    <span class="up">向上</span>
+                    <span class="down">向下</span>
+                </div>
+                <div>
+                    <textarea id="comment" rows="8" cols="40">多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。
+                    </textarea>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
