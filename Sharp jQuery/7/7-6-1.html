@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>自定义颜色插件</title>
+		<style type="text/css">
+			.a {
+				color: red;
+			}
+		</style>
+		<script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="jquery.color.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				alert($("div").color() + "\n返回字符串，证明此插件可用。");
+				alert($("div").color("red") + "\n返回object证明得到的是jQuery对象。");
+			})
+		</script>
+	</head>
+	<body>
+		<div class="a">red</div>
+		<div style="color:blue">blue</div>
+		<div style="color:green">green</div>
+		<div style="color:yellow">yellow</div>
+	</body>
+</html>
