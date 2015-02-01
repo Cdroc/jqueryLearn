@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery</title>
+        <script type="text/javascript" src="../scripts/jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("#send").click(function() {
+                    // 1.1
+                    // $.get("test.html", {
+                    //     username : $("#username").val(),
+                    //     content : $("#content").val()
+                    // }, function(data, textStatus) {
+                    //     $("#resText").html(data);
+                    // })
+                    // 1.2 通用化简
+                    // $.get("test.html", $("#form1").serialize(), function(data, textStatus) {
+                    //     $("#resText").html(data);
+                    // })
+                    // 2
+                    var fields = $("#form1").serializeArray();
+                    console.log(fields);
+                    $.each(fields, function(i, field) {
+                        console.log(field);
+                        console.log(field.value);
+                        $("#resText").append(field.value + " , ");
+                    })
+                    // 3
+                    var obj = {a:1,b:2,c:3};
+                    var k = $.param(obj);
+                    console.log(k);
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <form id="form1" action="#">
+            <p>评论：</p>
+            <p>姓名：<input type="text" name="username" id="username" /></p>
+            <p>内容：<textarea name="content" id="content" rows="2" cols="20"></textarea></p>
+            <p><input type="button" id="send" value="提交"></p>
+        </form>
+        <div id="resText"></div>
+    </body>
+</html>
